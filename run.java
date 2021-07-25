@@ -38,17 +38,25 @@ public class run {
         }
 
         int count = 0;
+        String levelType = null;
 
         // game type by level
         if (level.compareTo("E") != 0 || level.compareTo("e") != 0) {
+            levelType = "easy";
             easy(count);
         }
         if (level.compareTo("M") != 0 || level.compareTo("m") != 0) {
+            levelType = "medium";
             medium(count);
         }
         if (level.compareTo("H") != 0 || level.compareTo("h") != 0) {
+            levelType = "hard";
             hard(count);
         }
+
+        // display user's number of correct solutions
+        System.out.println("Congratulations! You finished the game. You earned a " +
+                "score of " + count + "/50 at the " + levelType + " level.");
     }
 
     // helper function: manages easy level
