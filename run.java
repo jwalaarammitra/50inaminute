@@ -1,21 +1,22 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class run {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // greeting
-        System.out.println("Welcome to 50 in a minute, the game where " +
-                "you will be asked to accurately complete 50 math questions " +
-                "in one minute.");
+        System.out.println("Welcome to 50 in a minute, the game where you will be asked to accurately complete 50 math questions in one minute.");
         System.out.println();
 
-        // level selection and begin game
-        System.out.println("There are 3 levels: easy, medium, and hard. " +
-                "(Easy: addition, Medium: addition, subtraction, Hard: addition, " +
-                "subtraction, square roots)");
+        // level description
+        System.out.println("There are 3 levels: easy, medium, and hard. (Easy: addition, Medium: addition, subtraction, Hard: addition, subtraction, square roots)");
 
-        System.out.println("Type E for easy, M for medium, and H for hard. Then " +
-                "press enter when you are ready and the game will begin right away.");
+        // level selection
+        System.out.println("Type E for easy, M for medium, and H for hard. Then press enter when you are ready and the game will begin right away.");
 
         // read user input
         boolean validInput = false;
@@ -40,27 +41,36 @@ public class run {
         int count = 0;
         String levelType = null;
 
+        long start;
+        long end;
+
         // game type by level
+
         if (level.compareTo("E") != 0 || level.compareTo("e") != 0) {
             levelType = "easy";
-            easy(count);
+            start = System.currentTimeMillis();
+            easy(count, start);
+            System.exit(10);
         }
         if (level.compareTo("M") != 0 || level.compareTo("m") != 0) {
             levelType = "medium";
-            medium(count);
+            start = System.currentTimeMillis();
+            medium(count, start);
         }
         if (level.compareTo("H") != 0 || level.compareTo("h") != 0) {
             levelType = "hard";
-            hard(count);
+            start = System.currentTimeMillis();
+            hard(count, start);
         }
 
-        // display user's number of correct solutions
-        System.out.println("Congratulations! You finished the game. You earned a " +
-                "score of " + count + "/50 at the " + levelType + " level.");
+        // display score out of 50
+        System.out.println("Congratulations! You finished the game. You earned a score of " + count + "/50 at the " + levelType + " level.");
     }
 
     // helper function: manages easy level
-    public static void easy(int count) {
+    public static void easy(int count, long start) {
+        long end = System.currentTimeMillis();
+
         for (int i = 0; i < 50; i++) {
             Random rand = new Random();
             int upperbound = 15;
@@ -73,6 +83,7 @@ public class run {
             Scanner readObj = new Scanner(System.in);
             if (readObj.hasNextInt()) {
                 answer = readObj.nextInt();
+
             }
             else {
                 System.out.println("Try again! Your input is invalid.");
@@ -84,7 +95,7 @@ public class run {
     }
 
     // helper function: manages medium level
-    public static void medium(int count) {
+    public static void medium(int count, long start) {
         for (int i = 0; i < 50; i++) {
             Random rand = new Random();
             int upperbound = 15;
@@ -121,7 +132,7 @@ public class run {
     }
 
     // helper function: manages hard level
-    public static void hard(int count) {
+    public static void hard(int count, long start) {
 
     }
 
