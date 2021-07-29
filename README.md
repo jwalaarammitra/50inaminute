@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+'''
 
 ## IDE Used
 IntelliJ IDEA - Purdue University Student License
@@ -19,6 +20,5 @@ IntelliJ IDEA - Purdue University Student License
 ## Resources Used
 StackOverflow - In this project, I utilized help from StackOverflow to research the various methods I could implement the 60 second timer feature.
 
-'''
 ## Permissions
 This code is intellectual property of Jwala Aram Mitra. Any reference or implementation of my code must be cited with my full name, this GitHub repository, and the date of usage.
