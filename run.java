@@ -5,6 +5,7 @@ import java.util.TimerTask;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 public class run {
     public static void main(String[] args) throws InterruptedException {
@@ -41,35 +42,25 @@ public class run {
         int count = 0;
         String levelType = null;
 
-        long start;
-        long end;
-
         // game type by level
         if (level.compareTo("E") == 0 || level.compareTo("e") == 0) {
             levelType = "easy";
-            start = System.currentTimeMillis();
-            easy(count, start);
+            easy(count);
             System.exit(10);
         }
         else if (level.compareTo("M") == 0 || level.compareTo("m") == 0) {
             levelType = "medium";
-            start = System.currentTimeMillis();
-            medium(count, start);
+            medium(count);
         }
         else if (level.compareTo("H") == 0 || level.compareTo("h") == 0) {
             levelType = "hard";
-            start = System.currentTimeMillis();
-            hard(count, start);
+            hard(count);
         }
-
-        // display score out of 50
-        System.out.println("Congratulations! You finished the game. You earned a score of " + count + "/50 at the " + levelType + " level.");
     }
 
     // helper function: manages easy level
-    public static void easy(int count, long start) {
-        long end = System.currentTimeMillis();
-
+    public static void easy(int count) {
+        Executors.newSingleThreadScheduledExecutor().schedule(() -> System.exit(0), 60, TimeUnit.SECONDS);
         for (int i = 0; i < 50; i++) {
             Random rand = new Random();
             int upperbound = 15;
@@ -89,12 +80,16 @@ public class run {
                 System.out.println();
             }
 
-            if (answer == c) { count++; }
+            if (answer == c) {
+                count++;
+            }
+            System.out.println("------------------------------------ Score: " + count);
         }
     }
 
     // helper function: manages medium level
-    public static void medium(int count, long start) {
+    public static void medium(int count) {
+        Executors.newSingleThreadScheduledExecutor().schedule(() -> System.exit(0), 60, TimeUnit.SECONDS);
         for (int i = 0; i < 50; i++) {
             Random rand = new Random();
             int upperbound = 15;
@@ -126,18 +121,22 @@ public class run {
             }
             int answer = readObj.nextInt();
 
-            if (answer == c) { count++; }
+            if (answer == c) {
+                count++;
+            }
+            System.out.println("------------------------------------ Score: " + count);
         }
     }
 
     // helper function: manages hard level
-    public static void hard(int count, long start) {
+    public static void hard(int count) {
+        Executors.newSingleThreadScheduledExecutor().schedule(() -> System.exit(0), 60, TimeUnit.SECONDS);
         for (int i = 0; i < 50; i++) {
             Random rand = new Random();
             int upperbound = 15;
             int a = rand.nextInt(upperbound);
             int b = rand.nextInt(upperbound);
-            int c = 0;
+            int c;
 
             boolean add = false;
 
@@ -171,7 +170,10 @@ public class run {
             }
             int answer = readObj.nextInt();
 
-            if (answer == c) { count++; }
+            if (answer == c) {
+                count++;
+            }
+            System.out.println("------------------------------------ Score: " + count);
         }
     }
 
