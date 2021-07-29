@@ -7,12 +7,12 @@ In this game, the user has a selection of levels (easy, medium, and hard) to cho
 ## Language and Libraries Used
 Java
 
-'''java
+```java
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-'''
+```
 
 ## IDE Used
 IntelliJ IDEA - Purdue University Student License
