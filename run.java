@@ -35,18 +35,13 @@ public class run {
         }
 
         int count = 0;
-        String levelType = null;
 
         // game type by level
         if (level.compareTo("E") == 0 || level.compareTo("e") == 0) {
-            levelType = "easy";
             easy(count);
-            System.exit(10);
         } else if (level.compareTo("M") == 0 || level.compareTo("m") == 0) {
-            levelType = "medium";
             medium(count);
         } else if (level.compareTo("H") == 0 || level.compareTo("h") == 0) {
-            levelType = "hard";
             hard(count);
         }
     }
@@ -163,6 +158,4 @@ public class run {
             System.out.println("------------------------------------ Score: " + count);
         }
     }
-
-    // CLOSE SCANNERS!
 }
