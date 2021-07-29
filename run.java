@@ -1,14 +1,10 @@
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 public class run {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         // greeting
         System.out.println("Welcome to 50 in a minute, the game where you will be asked to accurately complete 50 math questions in one minute.");
         System.out.println();
