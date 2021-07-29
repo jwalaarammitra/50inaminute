@@ -29,8 +29,7 @@ public class run {
                     && level.compareTo("m") != 0 && level.compareTo("h") != 0) {
                 System.out.println("Try again! Your input is invalid.");
                 System.out.println();
-            }
-            else {
+            } else {
                 validInput = true;
             }
         }
@@ -43,12 +42,10 @@ public class run {
             levelType = "easy";
             easy(count);
             System.exit(10);
-        }
-        else if (level.compareTo("M") == 0 || level.compareTo("m") == 0) {
+        } else if (level.compareTo("M") == 0 || level.compareTo("m") == 0) {
             levelType = "medium";
             medium(count);
-        }
-        else if (level.compareTo("H") == 0 || level.compareTo("h") == 0) {
+        } else if (level.compareTo("H") == 0 || level.compareTo("h") == 0) {
             levelType = "hard";
             hard(count);
         }
@@ -70,8 +67,7 @@ public class run {
             if (readObj.hasNextInt()) {
                 answer = readObj.nextInt();
 
-            }
-            else {
+            } else {
                 System.out.println("Try again! Your input is invalid.");
                 System.out.println();
             }
@@ -99,8 +95,7 @@ public class run {
                 add = true;
                 c = a + b;
                 System.out.println(a + " + " + b + " = ");
-            }
-            else {
+            } else {
                 c = a - b;
                 System.out.println(a + " - " + b + " = ");
             }
@@ -110,8 +105,7 @@ public class run {
                 System.out.println("Try again! Your input is invalid.");
                 if (add) {
                     System.out.println(a + " + " + b + " = ");
-                }
-                else {
+                } else {
                     System.out.println(a + " - " + b + " = ");
                 }
             }
@@ -140,12 +134,10 @@ public class run {
                 add = true;
                 c = a + b;
                 System.out.println(a + " + " + b + " = ");
-            }
-            else if (i % 3 == 1) {
+            } else if (i % 3 == 1) {
                 c = a - b;
                 System.out.println(a + " - " + b + " = ");
-            }
-            else {
+            } else {
                 int[] arr = {1, 4, 9, 16, 25};
                 int[] ans = {1, 2, 3, 3, 5};
                 int randomIndex = rand.nextInt(arr.length);
@@ -159,8 +151,7 @@ public class run {
                 System.out.println("Try again! Your input is invalid.");
                 if (add) {
                     System.out.println(a + " + " + b + " = ");
-                }
-                else {
+                } else {
                     System.out.println(a + " - " + b + " = ");
                 }
             }
