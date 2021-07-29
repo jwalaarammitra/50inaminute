@@ -45,19 +45,18 @@ public class run {
         long end;
 
         // game type by level
-
-        if (level.compareTo("E") != 0 || level.compareTo("e") != 0) {
+        if (level.compareTo("E") == 0 || level.compareTo("e") == 0) {
             levelType = "easy";
             start = System.currentTimeMillis();
             easy(count, start);
             System.exit(10);
         }
-        if (level.compareTo("M") != 0 || level.compareTo("m") != 0) {
+        else if (level.compareTo("M") == 0 || level.compareTo("m") == 0) {
             levelType = "medium";
             start = System.currentTimeMillis();
             medium(count, start);
         }
-        if (level.compareTo("H") != 0 || level.compareTo("h") != 0) {
+        else if (level.compareTo("H") == 0 || level.compareTo("h") == 0) {
             levelType = "hard";
             start = System.currentTimeMillis();
             hard(count, start);
@@ -133,7 +132,47 @@ public class run {
 
     // helper function: manages hard level
     public static void hard(int count, long start) {
+        for (int i = 0; i < 50; i++) {
+            Random rand = new Random();
+            int upperbound = 15;
+            int a = rand.nextInt(upperbound);
+            int b = rand.nextInt(upperbound);
+            int c = 0;
 
+            boolean add = false;
+
+            if (i % 3 == 0) {
+                add = true;
+                c = a + b;
+                System.out.println(a + " + " + b + " = ");
+            }
+            else if (i % 3 == 1) {
+                c = a - b;
+                System.out.println(a + " - " + b + " = ");
+            }
+            else {
+                int[] arr = {1, 4, 9, 16, 25};
+                int[] ans = {1, 2, 3, 3, 5};
+                int randomIndex = rand.nextInt(arr.length);
+                int r = arr[randomIndex];
+                c = ans[randomIndex];
+                System.out.println("√" + r + " = ");
+            }
+
+            Scanner readObj = new Scanner(System.in);
+            while (!readObj.hasNextInt()) {
+                System.out.println("Try again! Your input is invalid.");
+                if (add) {
+                    System.out.println(a + " + " + b + " = ");
+                }
+                else {
+                    System.out.println(a + " - " + b + " = ");
+                }
+            }
+            int answer = readObj.nextInt();
+
+            if (answer == c) { count++; }
+        }
     }
 
     // CLOSE SCANNERS!
