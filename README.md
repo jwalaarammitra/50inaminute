@@ -5,7 +5,7 @@ When I was in elementary school, we were assigned to try to complete 50 simple g
 In this game, the user has a selection of levels (easy, medium, and hard) to choose from. The easy level includes addition problems and the medium level includes addition and substraction problems. The hard level includes addition, substraction, and square root problems. All addends, minuends, and subtrahends are random numbers ranging from 0 to 15. All radicands have perfect square roots ranging from 1 to 25. For all levels, the user is given exactly 60 seconds to complete the 50 math problems to the best of their ability. As each individual problem is solved, the user's score is displayed.
 
 ## Language and Libraries Used
-This project is entirely coded in Java.
+This game is entirely coded in Java.
 
 ```java
 import java.util.Random;
